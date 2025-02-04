@@ -1,0 +1,1 @@
+# scopex-money-testing
