@@ -1,0 +1,13 @@
+{
+    "validUser": {
+      "email": "gayu.shobi39@gmail.com",
+      "password": "Sajith!0708",
+      "firstName": "Gayu",
+      "lastName": "Shobi"
+    },
+    "invalidUser": {
+      "email": "gayu@123.com",
+      "password": "sajith"
+    }
+  }
+  
