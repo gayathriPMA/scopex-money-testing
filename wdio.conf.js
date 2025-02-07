@@ -23,21 +23,18 @@ exports.config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     framework: 'mocha',
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['mochawesome', {
+            outputDir: './test/reports/mochawesome',
+            reportFilename: 'scopex-report',
+            overwrite: true,
+            html: true,
+            json: false
+        }]
+    ],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
     },
-
-    // Optional hooks (you can uncomment and use as needed)
-    // onPrepare: function (config, capabilities) {
-    // },
-    // beforeSession: function (config, capabilities, specs, cid) {
-    // },
-    // before: function (capabilities, specs) {
-    // },
-    // after: function (result, capabilities, specs) {
-    // },
-    // onComplete: function (exitCode, config, capabilities, results) {
-    // },
 };

@@ -35,16 +35,16 @@ describe('Scopex Money Application', () => {
         await RecipientPage.clickRecipientsTab();
         await RecipientPage.clickAddRecipientButton();
         await RecipientPage.enterRecipientNickname(recipientData.recipient1.nickname);
-        await RecipientPage.enterIFSCCode(recipientData.ifsc.nickname);
-        await RecipientPage.enterAccountNumber(recipientData.accountNumber.nickname);
+        await RecipientPage.enterIFSCCode(recipientData.recipient1.ifsc);
+        await RecipientPage.enterAccountNumber(recipientData.recipient1.accountNumber);
         await RecipientPage.clickFinalAddRecipientButton();
 
         /* Verify recipient added successfully */
-        // const recipientAddedMsg = await $('android=new UiSelector().textContains("Recipient added successfully")');
-        // expect(await recipientAddedMsg.isDisplayed()).toBeTruthy();
+        const recipientAddedMsg = await $('android=new UiSelector().textContains("Recipient added successfully!")');
+        expect(await recipientAddedMsg.isDisplayed()).toBeTruthy();
     });
 
-   
+
     /* Logout Test */
     it('should logout successfully', async () => {
         /* Open the home screen by launching the main activity */
@@ -59,10 +59,14 @@ describe('Scopex Money Application', () => {
         const logoutButton = await $('android=new UiSelector().description("Log out")');
         await logoutButton.waitForDisplayed({ timeout: 10000 });
         await logoutButton.click();
+             const alertTitle = await $('android=new UiSelector().resourceId("android:id/title_template")');
+        await alertTitle.waitForDisplayed({ timeout: 5000 });
 
-        // Verify redirected to Sign-Up/Login page
-        // const signUpButton = await $('android=new UiSelector().text("Sign Up")');
-        // expect(await signUpButton.isDisplayed()).toBeTruthy();
+        const okButton = await $('android=new UiSelector().resourceId("android:id/button1")');
+        await okButton.waitForDisplayed({ timeout: 5000 });
+        await okButton.click();
+        const signUpButton = await $('android=new UiSelector().text("Log in to ScopeX ")');
+        expect(await signUpButton.isDisplayed()).toBeTruthy();
     });
 
 
