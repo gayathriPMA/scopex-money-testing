@@ -23,16 +23,18 @@ exports.config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     framework: 'mocha',
-    reporters: [
-        'spec',
-        ['mochawesome', {
-            outputDir: './test/reports/mochawesome',
-            reportFilename: 'scopex-report',
-            overwrite: true,
-            html: true,
-            json: false
-        }]
-    ],
+    // reporters: [
+    //     'spec',
+    //     ['wdio-mochawesome-reporter', {
+    //         outputDir: './test/reports/mochawesome',
+    //         reportFilename: 'scopex-report',
+    //         overwrite: true,
+    //         html: true,
+    //         json: false
+    //     }]
+    // ],
+    
+    
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
