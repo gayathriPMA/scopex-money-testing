@@ -1,0 +1,14 @@
+
+{
+    "recipient1": {
+      "nickname": "Gayathri",
+      "ifsc": "SBIN0013838",
+      "accountNumber": "20114658848"
+    },
+    "recipient2": {
+      "nickname": "Shayan",
+      "ifsc": "ICIC0005678",
+      "accountNumber": "9845543210"
+    }
+  }
+  
